@@ -4,7 +4,8 @@
   "description": "Nodejs + ejs Application to track bugs for a project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "sibanada_nayak",
   "license": "ISC",
