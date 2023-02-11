@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Nodejs + ejs Application to track bugs for a project",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
