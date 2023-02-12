@@ -3,7 +3,7 @@ const app = express();
 const router = require('./route')
 const expressLayouts = require('express-ejs-layouts');
 require('dotenv').config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
