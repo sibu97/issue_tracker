@@ -1,0 +1,91 @@
+#heading {
+  margin-bottom: 50px; }
+
+#search-issue {
+  display: inline-block;
+  width: 45%;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  vertical-align: top; }
+  #search-issue h2 {
+    text-align: center; }
+  #search-issue #search-title {
+    width: 80%;
+    font-size: 1.5rem;
+    border: 0px;
+    border-radius: 2rem;
+    text-align: center; }
+  #search-issue #sbtn {
+    background-color: #04aa6d;
+    color: white;
+    font-weight: bold;
+    width: 80px;
+    height: 40px;
+    border: 0px;
+    border-radius: 2rem; }
+
+#filters {
+  display: inline-block;
+  width: 45%;
+  vertical-align: top; }
+  #filters #fbtn {
+    background-color: #04aa6d;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 250px;
+    height: 60px;
+    border: 0px;
+    border-radius: 2rem; }
+  #filters #select-filter {
+    display: none; }
+    #filters #select-filter .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 38px;
+      font-weight: bold; }
+    #filters #select-filter .close:hover,
+    #filters #select-filter .close:focus {
+      color: white;
+      text-decoration: none;
+      cursor: pointer; }
+    #filters #select-filter label {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #04aa6d; }
+    #filters #select-filter .btn {
+      background-color: #04aa6d;
+      color: white;
+      font-weight: bold;
+      width: 80px;
+      height: 40px;
+      border: 0px;
+      border-radius: 2rem; }
+
+#issue-container {
+  width: 100%;
+  padding: 10px; }
+  #issue-container #issue {
+    width: 90%;
+    margin: 20px;
+    font-size: 1.3rem;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin: auto; }
+    #issue-container #issue .green {
+      color: #04aa6d; }
+    #issue-container #issue .label {
+      width: auto;
+      height: 30px;
+      color: white;
+      border: 4px solid #04aa6d;
+      border-radius: 2rem;
+      margin-right: 5px;
+      padding: 5px; }
+  #issue-container #issue:hover {
+    background-color: #191e19; }
+
+#addBtn {
+  text-align: center;
+  margin-top: 20px; }

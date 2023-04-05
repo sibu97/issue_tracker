@@ -1,0 +1,111 @@
+#heading{
+    margin-bottom: 50px;
+}
+#search-issue{
+    display: inline-block;
+    width: 45%;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    // border: 1px solid white;
+    vertical-align: top;
+    h2{
+        text-align: center;
+    }
+    #search-title{
+        width: 80%;
+        font-size: 1.5rem;
+        border: 0px;
+        border-radius: 2rem;
+        text-align: center;
+    }
+    #sbtn{
+        background-color: #04aa6d;
+        color: white;
+        font-weight: bold;
+        width: 80px;
+        height: 40px;
+        border: 0px;
+        border-radius: 2rem;
+    }
+}
+#filters{
+    display: inline-block;
+    width: 45%;
+    // border: 1px solid white;
+    vertical-align: top;
+    #fbtn{
+        background-color: #04aa6d;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        width: 250px;
+        height: 60px;
+        border: 0px;
+        border-radius: 2rem;
+    }
+    
+    #select-filter{
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 38px;
+            font-weight: bold;
+          }
+          
+          .close:hover,
+          .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+          }
+        display: none;
+        label{
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #04aa6d;
+        }
+        .btn{
+            background-color: #04aa6d;
+            color: white;
+            font-weight: bold;
+            width: 80px;
+            height: 40px;
+            border: 0px;
+            border-radius: 2rem;
+        }
+    }
+}
+#issue-container{
+    width: 100%;
+    // border: 1px solid white;
+    padding: 10px;
+    #issue{
+        width: 90%;
+        margin: 20px;
+        font-size: 1.3rem;
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        margin: auto;
+        .green{
+            color: #04aa6d;
+        }
+        .label{
+            width: auto;
+            height: 30px;
+            color: white;
+            border: 4px solid #04aa6d;
+            border-radius: 2rem;
+            margin-right: 5px;
+            padding: 5px;
+        }
+    }
+    #issue:hover{
+        background-color: #191e19;
+        // background-color: #161a18a6;
+    }
+}
+#addBtn{
+    text-align: center;
+    margin-top: 20px;
+}

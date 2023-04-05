@@ -1,0 +1,137 @@
+<link rel="stylesheet" href="/styles/addIssue.css">
+<link rel="stylesheet" href="/styles/issue.css">
+<!-- heading -->
+<div id="heading">
+    <h1 style="text-align: center;"><%= project.name %> - Issues</h1>
+</div>
+
+<!-- form to create new issue -->
+<div id="modal" class="myModal">
+    <div class="modal-content">
+        <!-- close the popup -->
+        <span class="close">&times;</span>
+        <h2 style="text-align: center ; color: #04aa6d;">Enter Issue Details</h2>
+        <form action="/issue/create" method="post">
+            <!-- title -->
+            <label>Enter Title of Issue :</label><br>
+            <input type="text" name="title" placeholder="Enter title of your issue"><br><br>
+            <!-- description -->
+            <label>Enter Description :</label><br>
+            <textarea name="description" id="" cols="30" rows="3" placeholder="Enter issue desription"></textarea><br><br>
+            <!-- <label for="labels">Select Issue label</label><br> -->
+            <!-- Issue labels -->
+            <label>Select Isssue Labels :</label><br>
+            <select name="labels"  multiple>
+                <option value="bug">bug</option>
+                <option value="dependencies">dependencies</option>
+                <option value="duplicate">duplicate</option>
+                <option value="enhancement">enhancement</option>
+                <option value="help">help</option>
+                <option value="inprogress">inprogress</option>
+                <option value="invalid">invalid</option>
+                <option value="question">question</option>
+                <option value="wontfix">wontfix</option>
+            </select><br><br>
+            <!-- issue author name -->
+            <label>Enter Author Name :</label><br>
+            <input type="text" name="author" placeholder="Enter author name">
+            <input type="hidden" name="project" value= '<%= project._id %>'><br>
+            <!-- submit button -->
+            <input type="submit" value="submit" id="create-btn">
+            <!-- <button id="create-btn" type="submit">Submit</button> -->
+        </form> 
+    </div>
+</div>
+<!-- Seach issue form -->
+<div id="search-issue">
+    <form action="/project/search" method="post" id="search-form">
+        <!-- project id -->
+        <input type="hidden" name="project" value= '<%= project._id %>'>
+        <!-- searched text -->
+        <input id="search-title" type="text" name="search" placeholder="Enter title or description to search">
+        <!-- submit button -->
+        <input type="submit" value="Submit" id="sbtn">
+        <!-- <button id="sbtn" type="submit">Submit</button> -->
+    </form> 
+</div>
+<!-- div to add filters -->
+<div id="filters">
+    <!-- button to open the filter options -->
+    <div style="text-align: center;">
+        <button id="fbtn">Add - Filters</button>
+   </div>
+   <!-- form for adding filter -->
+    <div id="select-filter">
+        <span id="hbtn" class="close">&times;</span>
+        <form action="/project/filter" method="post" id="filter-form">
+            <!-- select issue label -->
+            <label for="labels">Select Label</label><br>
+            <input type="checkbox" name="labels" value="bug">Bug &nbsp;
+            <input type="checkbox" name="labels" value="dependencies">dependencies &nbsp;
+            <input type="checkbox" name="labels" value="duplicate">duplicate &nbsp;
+            <input type="checkbox" name="labels" value="enhancement">enhancement &nbsp;
+            <input type="checkbox" name="labels" value="help">help &nbsp;
+            <input type="checkbox" name="labels" value="inprogress">inprogress &nbsp;
+            <input type="checkbox" name="labels" value="invalid">invalid &nbsp;
+            <input type="checkbox" name="labels" value="question">question &nbsp;
+            <input type="checkbox" name="labels" value="wontfix">wontfix
+             <br><br>
+             <!-- select author name -->
+            <label for="author">Select Author</label><br>
+                <% let authors = []; %>
+                <% for(let issue of issues) { %>
+                    <% authors.push(issue.author) %>
+                <% } %>
+                <% let uniqueAuthor = authors.filter((x, i, a) => a.indexOf(x) == i) %>
+                <% for(let author of uniqueAuthor) { %>
+                    <input type="checkbox" name="author" value="<%= author %>"><%= author %>
+                 <% } %>
+                <!-- <% for(let issue of issues) { %>
+                    <input type="checkbox" name="author" value="<%= issue.author %>"><%= issue.author %>
+                 <% } %> -->
+             <br><br>
+             <!-- project id -->
+            <input type="hidden" name="project" value= '<%= project._id %>'>
+            <!-- submit button -->
+            <div style="text-align: center;">
+                <button class="btn" type="submit">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
+<!-- displays all the issues of the project -->
+<div id="issue-container">
+    <!-- <%= project.name %> -->
+    <% for(let issue of issues) { %>
+        <div id="issue">
+            <div style="text-align: center;">
+                <!-- issue title -->
+                <h2 class="green"><%= issue.title %> </h2>
+            </div>
+            <!-- issue description -->
+            <p><span class="green">Issue Description </span> : <%= issue.description %></p>
+            <!-- author -->
+            <p><span class="green">Author </span> : <%= issue.author %> </p>
+            <!-- issue labels -->
+            <p><span class="green">Issue - Labels</span> :</p>
+            <div id="label-<%= issue._id %>">
+                <% for(let label of issue.labels) { %>
+                    <span class="label"><%= label %></span>
+                <% } %>
+            </div>
+        </div>
+    <% } %>
+</div>
+<!-- button to add new issue -->
+<div id="addBtn">
+    <button id="myBtn">+ Add Issue</button>
+</div>
+
+<script src="/scripts/addIssue.js"></script>
+<script src="/scripts/issue.js"></script>
+<script src="/scripts/searchIssue.js"></script>
+<script src="/scripts/filterIssue.js"></script>
+
+
+

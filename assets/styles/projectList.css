@@ -1,0 +1,20 @@
+#projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around; }
+  #projects-list .project {
+    width: 30%;
+    border: 2px solid white;
+    background-color: #cbdedb;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    margin-bottom: 20px; }
+    #projects-list .project ul a li h2 {
+      color: #04a96d; }
+    #projects-list .project ul a li span {
+      color: #4988c5;
+      font-weight: bold; }
+  #projects-list .project:hover {
+    background-color: lightgray; }
