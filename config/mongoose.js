@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 // establishing connection
 mongoose.connect('mongodb+srv://sibu:221997@sibananda.j2qis.mongodb.net/issueTracker?retryWrites=true&w=majority');
+mongoose.set('strictQuery', true);
 // acquiring connection
 const db = mongoose.connection;
 
